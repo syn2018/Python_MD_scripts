@@ -1,0 +1,40 @@
+HOW TO RUN THE MOLECULAR DYNAMICS EXERCISES
+
+(1) Launch python or ipython.
+    (a) Running from Cornell in the physics facilities in the 
+    basement of Rockefeller, just log in.
+    (b) Running remotely from another machine with X-windows, if you have
+    an account on one of the Rockefeller machines,
+	ssh -X username@remote.physics.cornell.edu
+	ssh -X wsNN	[login to one of the client machines, where NN is
+       			an integer from zero to around 30. The server doesn't 
+			have user software installed.]
+    (c) If you aren't from Cornell physics, log on to a machine with Python
+    and the necessary packages installed. Installation instructions for Linux,
+    Windows, and Macs at http://www.physics.cornell.edu/~myers/teaching/ComputationalMethods/python/WorldPy.html
+
+(2) Copy DigitalMaterial.py and PairDistributionMD.py (or the python answer
+file for your exercise) from the Web site into the current directory
+
+(3) Run the demo, to get a quick run-through of the whole sequence of
+simulations. Note: indents must be consistent in Python; no spaces
+before these lines...
+
+    ipython
+    In [1]: %run PairDistributionMD	# or the corresponding exercise.py file
+    In [2]: demo()
+
+--- or, if you don't have ipython installed ---
+
+    python -i PairDistributionMD.py    
+
+You will need to say "y" to continue between steps. You may need to kill
+the plot to restart the simulation as well.
+
+(4) Run
+    In [55]: demo(nAverages=10, nCoolSteps=4)
+or something similar, to get better thermalization (nCoolSteps) and 
+better statistics for the histograms (nAverages).
+
+You can get plots of the histograms by clicking on the save-disk 
+at the bottom. The red curve for the gas simulation is the theory curve.
